@@ -10,10 +10,6 @@ img{
 	height: 100px;
 }
 
-ul{
-	list-style-type: none;
-}
-
 .no-padding{
 	padding-left:0;
 	padding-right:0;
@@ -64,4 +60,8 @@ button{
 	background-color: #235E6F;
 	color:white;
 	border:none;
+}
+
+#add-stream-button{
+	background-color: rgb(100, 65, 164);
 }

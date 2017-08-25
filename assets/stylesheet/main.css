@@ -10,6 +10,58 @@ img{
 	height: 100px;
 }
 
+ul{
+	list-style-type: none;
+}
+
+.no-padding{
+	padding-left:0;
+	padding-right:0;
+}
+
+#stream-buttons-container{
+	width:60%;
+}
+
+#stream-buttons-container button{
+	width: 100%;
+	padding-top: 5%;
+	padding-bottom: 5%;
+	font-size: 1.25em;
+	font-weight:600;
+}
+
 button{
-	margin-top: 70px;
+	display:inline-block;
+	margin-top: 100px;
+}
+
+#online-button{
+	color:#34A65F;
+}
+
+#online-button:hover{
+	background-color:#34A65F;
+	color:white;
+	border:none;
+}
+
+#offline-button{
+	color:#CC231E;
+}
+
+#offline-button:hover{
+	background-color: #CC231E;
+	color:white;
+	border:none;
+}
+
+#all-button{
+	color:#235E6F;
+}
+
+#all-button:hover{
+	background-color: #235E6F;
+	color:white;
+	border:none;
 }

@@ -69,3 +69,42 @@ button{
 #error-message{
 	color:red;
 }
+
+#stream-container{
+	margin-top: 3%;
+	/*margin-left: 15%;*/
+}
+
+.stream{
+	max-height:100px;
+	max-width:500px;
+}
+
+.stream {
+	display:inline-block;
+	max-height: 90%;
+	max-width: 80%;
+	border: 2px solid white;
+	background-color:white;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	
+}
+
+.stream .img-container img{
+	display:inline-block;
+	border:4px solid black;
+	border-radius:50%;
+	max-height: 90%;
+	max-width: 90%;
+}
+
+.stream .img-container img:hover{
+	border-color: rgb(100, 65, 164); 
+}
+
+#stream-container a:hover img{
+	position:relative;
+	top:-5px;
+	border-color: rgb(100, 65, 164);
+}

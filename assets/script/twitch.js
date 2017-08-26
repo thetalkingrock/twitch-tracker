@@ -18,14 +18,22 @@ $(document).ready(function () {
 					
 				}else{
 					
+					var html = "<div class='stream'>";
 					
+					html += "<div class='img-container'>";
 					
+					html += "<img src='" + data["logo"] + "' alt='user's profile picture'>";
 					
+					html += "</div>";
+					
+					html += "</div>";
+					
+					$("#stream-list").append(html);
+					
+					$(".modal").modal("hide");
 				}
 				
 			});
-			
-			//$(".modal").modal("hide");
 			
 		}else{
 			$("#error-message").html("Please enter a username");

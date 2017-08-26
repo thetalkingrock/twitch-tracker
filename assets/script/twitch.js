@@ -22,7 +22,11 @@ $(document).ready(function () {
 					
 					html += "<div class='img-container'>";
 					
+					html += "<a href='https://www.twitch.tv/" + $("#stream-name").val().trim() + "' target='_blank'>"; 
+					
 					html += "<img src='" + data["logo"] + "' alt='user's profile picture'>";
+					
+					html += "</a>";
 					
 					html += "</div>";
 					

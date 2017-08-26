@@ -18,6 +18,8 @@
 		<!-- my stylesheet -->
 		<link href="assets/stylesheet/main.css" type="text/css" rel="stylesheet">
 		
+		<script src="assets/script/twitch.js" type="text/JavaScript"></script>
+		
 	</head>
 
 	<body>
@@ -57,10 +59,12 @@
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal">&times;</button>
 						<h3>Enter stream info</h3>
+						<p>Enter name as it would appear in a url (ex: twitch.tv/username)</p>
 					</div>
 					<div class="modal-body">
 						<label for="#stream-input">Enter user's twitch username:</label>
-						<input type="text" required>
+						<input id="stream-name" type="text" required>
+						<p id="error-message"></p>
 					</div>
 					<div class="modal-footer">
 						<button id="add-stream-button" type="button" class="btn btn-primary">Add</button>

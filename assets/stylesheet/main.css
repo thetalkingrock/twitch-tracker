@@ -65,3 +65,7 @@ button{
 #add-stream-button{
 	background-color: rgb(100, 65, 164);
 }
+
+#error-message{
+	color:red;
+}

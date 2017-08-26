@@ -6,13 +6,26 @@ $(document).ready(function () {
 		if($("#stream-name").val().trim() !== "" && $("#stream-name").val() != null){
 			
 			var username = $("#stream-name").val();
-			var requestURL = "https://wind-bow.glitch.me/twitch-api/users/";
-			requestURL += username;
-			requestURL += "?callback=?";
+			var requestUserURL = "https://wind-bow.glitch.me/twitch-api/users/";
+			requestUserURL += username;
+			requestUserURL += "?callback=?";
 			
-			$.getJSON(requestURL, function (data) {
+			$.getJSON(requestUserURL, function (data) {
+				
+				if(data.hasOwnProperty("error")){
+					
+					$("#error-message").html("User not found");
+					
+				}else{
+					
+					
+					
+					
+				}
 				
 			});
+			
+			//$(".modal").modal("hide");
 			
 		}else{
 			$("#error-message").html("Please enter a username");

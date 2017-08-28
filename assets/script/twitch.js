@@ -1,10 +1,20 @@
 $(document).ready(function () {
 	
+	var streamArray = [];
+	
 	$("#add-stream-button").on("click", function (){
 		
 		if($("#stream-name-input").val().trim() !== "" && $("#stream-name-input").val() != null){
 			
 			var username = $("#stream-name-input").val();
+			
+			for(var x = 0; x < streamArray.length; x++){
+				if(username === streamArray[x]){
+					$("#error-message").html("Channel has already been entered");
+					return;
+				}
+			}
+			
 			var requestUserURL = "https://wind-bow.glitch.me/twitch-api/users/";
 			requestUserURL += username;
 			requestUserURL += "?callback=?";
@@ -16,6 +26,8 @@ $(document).ready(function () {
 					$("#error-message").html("User not found");
 					
 				}else{
+					
+					streamArray.push(username);
 					
 					var isStreaming = false;
 					var gameName = "";
@@ -48,7 +60,7 @@ $(document).ready(function () {
 						
 						html += "<div class='col-xs-6 col-center info-container'>";
 						
-						html += "<span id='stream-name'>" + data1["display_name"] + "</span>";
+						html += "<span class='stream-name'>" + data1["display_name"] + "</span>";
 						
 						html += "<br>";
 						

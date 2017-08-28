@@ -124,7 +124,7 @@ button{
 	padding-top:1%;
 }
 
-#stream-name{
+.stream-name{
 	color:rgb(100, 65, 164);
 	font-size:1.5em;
 }

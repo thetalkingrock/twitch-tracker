@@ -1,20 +1,20 @@
 $(document).ready(function () {
-	
+	//holds the names of previous streams entered
 	var streamArray = [];
 	
 	$("#add-stream-button").on("click", function (){
-		
+		//make sure user actually wrote something
 		if($("#stream-name-input").val().trim() !== "" && $("#stream-name-input").val() != null){
 			
 			var username = $("#stream-name-input").val();
-			
+			//check if it's a duplicate
 			for(var x = 0; x < streamArray.length; x++){
 				if(username === streamArray[x]){
 					$("#error-message").html("Channel has already been entered");
 					return;
 				}
 			}
-			
+			//construct url needed to retrieve information about the channel
 			var requestUserURL = "https://wind-bow.glitch.me/twitch-api/users/";
 			requestUserURL += username;
 			requestUserURL += "?callback=?";
@@ -31,11 +31,11 @@ $(document).ready(function () {
 					
 					var isStreaming = false;
 					var gameName = "";
-					
+	
 					var requestStreamURL = "https://wind-bow.glitch.me/twitch-api/streams/";
 					requestStreamURL += username;
 					requestStreamURL += "?callback=?";
-					
+					//check if entered streamer is currently streaming
 					$.getJSON(requestStreamURL, function (data2) {
 						
 						if(data2["stream"] != null){
@@ -43,7 +43,7 @@ $(document).ready(function () {
 							gameName = data2["stream"]["game"];
 							console.log(gameName);
 						}
-						
+						//construct html that will hold information about streamer
 						var html = "<div class='row row-centered'>";
 						
 						html += "<div class='col-xs-3 col-center picture-container'>";
@@ -90,8 +90,6 @@ $(document).ready(function () {
 						
 						html += "</div>";
 						
-						console.log(html);
-						
 						$("#stream-list .container").append(html);
 						
 						$("#stream-list .container .stream-row:last-child").fadeIn(4000);
@@ -106,17 +104,19 @@ $(document).ready(function () {
 		}
 		
 	});
-	
+	//when modal is exited, remove error message
 	$("button.close").on("click", function () {
 		$("#error-message").html("");
 	});
-	
+	//when X in a container is clicked, remove the container
 	$(document).on("click", ".remove", function () {
 		$(this).parent().parent().fadeOut(1000, function () {
 			$(this).remove();
 		});
 	});
-	
+	//if the user clicks the online button
+	//this function removes offline streams
+	//from the page and shows online streams only
 	$("#online-button").click(function () {
 		$("#stream-list .container").find(".offline").each(function(i){
 			if(i == $("#online-status.offline").length - 1){
@@ -131,7 +131,9 @@ $(document).ready(function () {
 			}
 		});
 	});
-	
+	//if the user clicks the offline button
+	//this function removes online streams
+	//from the page and shows online streams only
 	$("#offline-button").click(function () {
 		$("#stream-list .container").find(".online").each(function(i){
 			if(i == $("#online-status.online").length - 1){
@@ -145,7 +147,7 @@ $(document).ready(function () {
 			}	
 		});
 	});
-	
+	//if the all button is clicked, every stream, online and off, is displayed
 	$("#all-button").click(function () {
 		$("#stream-list .container").find("div").fadeIn(1000);
 	});

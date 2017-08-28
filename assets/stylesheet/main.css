@@ -72,7 +72,6 @@ button{
 
 #stream-container{
 	margin-top: 7%;
-	/*margin-left: 15%;*/
 }
 
 .stream{
@@ -97,15 +96,13 @@ button{
 	border-top-left-radius: 5px;
 	border-bottom-left-radius: 5px;
 	padding:.5%;
-	border-right:1px solid rgb(100, 65, 164);
+	border-right:2px solid rgb(100, 65, 164);
 }
 
 .picture-container img{
 	display:inline-block;
 	border-radius:50%;
 	border:2px solid white;
-	/*min-height:75px;
-	min-width:75px;*/
 }
 
 #stream-container img:hover{
@@ -128,16 +125,19 @@ button{
 	color:rgb(100, 65, 164);
 	font-size:1.5em;
 }
-/*
-#online-status{
-	color:red;
-	font-size:1.5em;
+
+.online{
+	color:green;
 }
-*/
+
+.offline{
+	color:red;
+}
+
 .remove-container{
 	background-color:white;
 	border:1px solid white;
-	border-left:1px solid rgb(100, 65, 164);
+	border-left:2px solid rgb(100, 65, 164);
 	border-top-right-radius:5px;
 	border-bottom-right-radius:5px !important;
 	padding-top:1.5%;
@@ -177,11 +177,3 @@ button{
 #online-status{
 	font-size:1.5em;
 }	
-
-.online{
-	color:green;
-}
-
-.offline{
-	color:red;
-}

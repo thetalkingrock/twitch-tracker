@@ -152,6 +152,12 @@ $(document).ready(function () {
 	
 	$("button.close").on("click", function () {
 		$("#error-message").html("");
+	});
+	
+	$(document).on("click", ".remove", function () {
+		$(this).parent().parent().fadeOut(1000, function () {
+			$(this).remove();
+		});
 	})
 	
 })
